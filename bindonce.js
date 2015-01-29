@@ -189,7 +189,7 @@
 									binder.element.prop('disabled', value);
 									break;
 								case 'src':
-									binder.element.attr(binder.attr, value);
+									binder.attrs.$set(binder.attr, value);
 									if (msie) binder.element.prop('src', value);
 									break;
 								case 'attr':
@@ -200,7 +200,7 @@
 										{
 											newAttr = attrKey.replace(/^boAttr/, '').replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 											newValue = binder.scope.$eval(binder.attrs[attrKey]);
-											binder.element.attr(newAttr, newValue);
+											binder.attrs.$set(newAttr, newValue);
 										}
 									});
 									break;
@@ -209,7 +209,7 @@
 								case 'title':
 								case 'id':
 								case 'value':
-									binder.element.attr(binder.attr, value);
+									binder.attrs.$set(binder.attr, value);
 									break;
 							}
 						}
